@@ -17,7 +17,7 @@ body {
 header {
   position: fixed;
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   text-align: center;
   background: rgba(15,27,51,0.8);
   backdrop-filter: blur(10px);
@@ -48,48 +48,38 @@ header {
 }
 
 .hero h1 {
-  font-size: 48px;
-  margin-bottom: 15px;
-}
-
-.hero p {
-  color: #ccc;
-  margin-bottom: 25px;
+  font-size: 42px;
 }
 
 .btn {
-  padding: 15px 30px;
   background: #4ea1ff;
+  padding: 14px 25px;
   border-radius: 10px;
   text-decoration: none;
   color: white;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #2f7edb;
+  margin: 10px;
+  display: inline-block;
 }
 
 /* CATALOG */
 .catalog {
-  padding: 80px 40px;
+  padding: 60px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
 }
 
 .card {
-  position: relative;
-  border-radius: 20px;
+  border-radius: 15px;
   overflow: hidden;
-  cursor: pointer;
-  transition: 0.4s;
+  position: relative;
+  text-decoration: none;
+  color: white;
 }
 
 .card img {
   width: 100%;
-  height: 350px;
+  height: 300px;
   object-fit: cover;
 }
 
@@ -100,43 +90,58 @@ header {
   background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
 }
 
-.card-content {
+.card h2 {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  z-index: 2;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
-/* ADVANTAGES */
-.advantages {
+/* PRICES */
+.prices {
   padding: 60px 20px;
   text-align: center;
+}
+
+.price-box {
   background: #111c33;
+  padding: 30px;
+  margin: 15px;
+  border-radius: 12px;
+  display: inline-block;
 }
 
-.advantages h2 {
-  margin-bottom: 40px;
-}
-
-.adv-grid {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.adv {
-  max-width: 200px;
-}
-
-footer {
+/* FORM */
+.form {
+  padding: 60px 20px;
   text-align: center;
-  padding: 20px;
-  background: #0f1b33;
+}
+
+input {
+  padding: 12px;
+  margin: 10px;
+  border-radius: 8px;
+  border: none;
+  width: 250px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero h1 {
+    font-size: 28px;
+  }
 }
 </style>
 </head>
@@ -149,62 +154,67 @@ footer {
 <section class="hero">
   <div class="hero-content">
     <h1>Окна, жалюзи и комфорт</h1>
-    <p>Премиальные решения для вашего дома</p>
-    <a href="#catalog" class="btn">Смотреть каталог</a>
+    <p>Установка под ключ в Испании</p>
+
+    <a href="#catalog" class="btn">Каталог</a>
+    <a href="https://wa.me/34614577968" class="btn">Написать</a>
   </div>
 </section>
 
 <!-- КАТАЛОГ -->
 <section class="catalog" id="catalog">
 
-  <a href="pvc.html" class="card">
-    <img src="https://images.unsplash.com/photo-1582582494700-f8ce0b63a9c0">
-    <div class="card-content">
-      <h2>ПВХ окна</h2>
-    </div>
-  </a>
+<a href="pvc.html" class="card">
+  <img src="https://images.unsplash.com/photo-1582582494700-f8ce0b63a9c0">
+  <h2>ПВХ окна</h2>
+</a>
 
-  <a href="blinds.html" class="card">
-    <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36">
-    <div class="card-content">
-      <h2>Жалюзи</h2>
-    </div>
-  </a>
+<a href="blinds.html" class="card">
+  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36">
+  <h2>Жалюзи</h2>
+</a>
 
-  <a href="nets.html" class="card">
-    <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b">
-    <div class="card-content">
-      <h2>Москитные сетки</h2>
-    </div>
-  </a>
+<a href="nets.html" class="card">
+  <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b">
+  <h2>Москитные сетки</h2>
+</a>
 
 </section>
 
-<!-- ПРЕИМУЩЕСТВА -->
-<section class="advantages">
-  <h2>Почему выбирают нас</h2>
+<!-- ЦЕНЫ -->
+<section class="prices">
+  <h2>Цены</h2>
 
-  <div class="adv-grid">
-    <div class="adv">
-      <h3>10+ лет</h3>
-      <p>опыта работы</p>
-    </div>
-
-    <div class="adv">
-      <h3>500+</h3>
-      <p>установленных окон</p>
-    </div>
-
-    <div class="adv">
-      <h3>Гарантия</h3>
-      <p>на все изделия</p>
-    </div>
+  <div class="price-box">
+    <h3>ПВХ окна</h3>
+    <p>от 120€</p>
   </div>
+
+  <div class="price-box">
+    <h3>Жалюзи</h3>
+    <p>от 50€</p>
+  </div>
+
+  <div class="price-box">
+    <h3>Сетки</h3>
+    <p>от 30€</p>
+  </div>
+
 </section>
 
-<footer>
-  © 2026 VentanaHub
-</footer>
+<!-- ФОРМА -->
+<section class="form">
+  <h2>Оставить заявку</h2>
+
+  <input placeholder="Ваше имя"><br>
+  <input placeholder="Телефон"><br>
+
+  <br>
+  <a href="https://wa.me/34614577968" class="btn">Отправить</a>
+</section>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/34614577968" class="whatsapp">WhatsApp</a>
 
 </body>
 </html>
