@@ -6,215 +6,146 @@
 <title>VentanaHub</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0b1220;
-  color: white;
-}
+body {margin:0;font-family:Arial;background:#0b1220;color:white}
 
 /* HEADER */
 header {
-  position: fixed;
-  width: 100%;
-  padding: 15px;
-  text-align: center;
-  background: rgba(15,27,51,0.8);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
+  position:fixed;width:100%;padding:15px;
+  display:flex;justify-content:space-between;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.lang button {
+  margin:5px;
+  padding:5px 10px;
+  cursor:pointer;
 }
 
 /* HERO */
 .hero {
-  height: 100vh;
-  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+  height:100vh;
+  background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;position:relative;
 }
-
 .hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
+  content:"";position:absolute;inset:0;
+  background:rgba(0,0,0,0.6);
 }
+.hero-content {position:relative;z-index:2}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 42px;
-}
-
+/* BUTTON */
 .btn {
-  background: #4ea1ff;
-  padding: 14px 25px;
-  border-radius: 10px;
-  text-decoration: none;
-  color: white;
-  margin: 10px;
-  display: inline-block;
+  background:#4ea1ff;
+  padding:12px 20px;
+  border-radius:8px;
+  color:white;
+  text-decoration:none;
 }
 
-/* CATALOG */
-.catalog {
-  padding: 60px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+/* CALCULATOR */
+.calc {
+  padding:40px;text-align:center;
+}
+select,input {
+  padding:10px;margin:10px;
 }
 
-.card {
-  border-radius: 15px;
-  overflow: hidden;
-  position: relative;
-  text-decoration: none;
-  color: white;
-}
-
-.card img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
-
-.card h2 {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-}
-
-/* PRICES */
-.prices {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-.price-box {
-  background: #111c33;
-  padding: 30px;
-  margin: 15px;
-  border-radius: 12px;
-  display: inline-block;
-}
-
-/* FORM */
-.form {
-  padding: 60px 20px;
-  text-align: center;
-}
-
-input {
-  padding: 12px;
-  margin: 10px;
-  border-radius: 8px;
-  border: none;
-  width: 250px;
+/* MAP */
+.map {
+  padding:40px;
 }
 
 /* WHATSAPP */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px 20px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  .hero h1 {
-    font-size: 28px;
-  }
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+  color:white;
+  text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<header>VentanaHub</header>
+<header>
+  <div>VentanaHub</div>
+
+  <div class="lang">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('es')">ES</button>
+  </div>
+</header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Окна, жалюзи и комфорт</h1>
-    <p>Установка под ключ в Испании</p>
-
-    <a href="#catalog" class="btn">Каталог</a>
-    <a href="https://wa.me/34614577968" class="btn">Написать</a>
+    <h1 id="title">Окна и решения</h1>
+    <p id="subtitle">ПВХ, жалюзи, москитки</p>
+    <br>
+    <a href="https://wa.me/34614577968" class="btn">WhatsApp</a>
   </div>
 </section>
 
-<!-- КАТАЛОГ -->
-<section class="catalog" id="catalog">
+<!-- КАЛЬКУЛЯТОР -->
+<section class="calc">
+  <h2 id="calcTitle">Рассчитать стоимость</h2>
 
-<a href="pvc.html" class="card">
-  <img src="https://images.unsplash.com/photo-1582582494700-f8ce0b63a9c0">
-  <h2>ПВХ окна</h2>
-</a>
+  <select id="type">
+    <option value="100">ПВХ окно</option>
+    <option value="50">Жалюзи</option>
+    <option value="30">Сетка</option>
+  </select>
 
-<a href="blinds.html" class="card">
-  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36">
-  <h2>Жалюзи</h2>
-</a>
-
-<a href="nets.html" class="card">
-  <img src="https://images.unsplash.com/photo-1593696140826-c58b021acf8b">
-  <h2>Москитные сетки</h2>
-</a>
-
-</section>
-
-<!-- ЦЕНЫ -->
-<section class="prices">
-  <h2>Цены</h2>
-
-  <div class="price-box">
-    <h3>ПВХ окна</h3>
-    <p>от 120€</p>
-  </div>
-
-  <div class="price-box">
-    <h3>Жалюзи</h3>
-    <p>от 50€</p>
-  </div>
-
-  <div class="price-box">
-    <h3>Сетки</h3>
-    <p>от 30€</p>
-  </div>
-
-</section>
-
-<!-- ФОРМА -->
-<section class="form">
-  <h2>Оставить заявку</h2>
-
-  <input placeholder="Ваше имя"><br>
-  <input placeholder="Телефон"><br>
+  <input type="number" id="size" placeholder="Размер (м²)">
 
   <br>
-  <a href="https://wa.me/34614577968" class="btn">Отправить</a>
+  <button onclick="calc()">Рассчитать</button>
+
+  <h3 id="result"></h3>
+</section>
+
+<!-- КАРТА -->
+<section class="map">
+  <h2>Мы на карте</h2>
+
+  <iframe 
+    src="https://maps.google.com/maps?q=Barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="100%" height="300" style="border:0;">
+  </iframe>
 </section>
 
 <!-- WHATSAPP -->
-<a href="https://wa.me/34614577968" class="whatsapp">WhatsApp</a>
+<a href="https://wa.me/34614577968" class="whatsapp">💬</a>
+
+<script>
+function calc(){
+  let price = document.getElementById("type").value;
+  let size = document.getElementById("size").value;
+
+  let result = price * size;
+  document.getElementById("result").innerText = "≈ " + result + " €";
+}
+
+/* LANGUAGE */
+function setLang(lang){
+  if(lang==="es"){
+    document.getElementById("title").innerText="Ventanas y soluciones";
+    document.getElementById("subtitle").innerText="PVC, persianas y mosquiteras";
+    document.getElementById("calcTitle").innerText="Calcular precio";
+  } else {
+    document.getElementById("title").innerText="Окна и решения";
+    document.getElementById("subtitle").innerText="ПВХ, жалюзи, москитки";
+    document.getElementById("calcTitle").innerText="Рассчитать стоимость";
+  }
+}
+</script>
 
 </body>
 </html>
