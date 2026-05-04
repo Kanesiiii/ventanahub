@@ -58,9 +58,13 @@ body {
   background:#111c33;
 }
 
-.gallery {
-  padding:40px;
-  text-align:center;
+.gallery img {
+  width:100%;
+  max-width:350px;
+  height:220px;
+  object-fit:cover;
+  margin:10px;
+  border-radius:10px;
 }
 
 .gallery img {
@@ -91,4 +95,13 @@ body {
   background:#25D366;
   padding:15px;
   border-radius:50%;
+}
+
+section {
+  padding:60px 20px;
+}
+
+.reviews, .prices {
+  max-width:800px;
+  margin:0 auto;
 }
