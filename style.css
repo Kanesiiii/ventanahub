@@ -187,3 +187,17 @@ section {
   padding:20px;
   border-radius:15px;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: #4ea1ff;
+  transition: 0.3s;
+}
