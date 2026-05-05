@@ -150,3 +150,42 @@ section {
   display:inline-block;
   margin-top:20px;
 }
+
+.slider {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+}
+
+.slide {
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:0.8s;
+}
+
+.slide.active {
+  opacity:1;
+}
+
+.hero {
+  position:relative;
+  height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+  text-align:center;
+  background:rgba(0,0,0,0.4);
+  padding:20px;
+  border-radius:15px;
+}
